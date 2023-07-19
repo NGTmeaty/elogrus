@@ -1,4 +1,4 @@
-module gopkg.in/sohlich/elogrus.v7
+module github.com/NGTmeaty/elogrus.elastic-7-fix
 
 go 1.12
 
