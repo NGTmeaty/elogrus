@@ -1,4 +1,4 @@
-module github.com/NGTmeaty/elogrus.elastic-7-fix
+module github.com/NGTmeaty/elogrus
 
 go 1.12
 
