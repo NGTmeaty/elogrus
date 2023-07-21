@@ -135,8 +135,12 @@ func newHookFuncAndFireFunc(client *elastic.Client, host string, level logrus.Le
 	if !exists {
 		createIndex, err := client.CreateIndex(indexFunc()).Do(ctx)
 		if err != nil {
-			cancel()
-			return nil, err
+			if !strings.Contains(err.Error(), "resource_already_exists_exception") {
+				cancel()
+				return nil, err
+			} else {
+				createIndex = &elastic.IndicesCreateResult{Acknowledged: true}
+			}
 		}
 		if !createIndex.Acknowledged {
 			cancel()
