@@ -1,4 +1,4 @@
-module github.com/NGTmeaty/elogrus
+module github.com/internetarchive/elogrus
 
 go 1.12
 
